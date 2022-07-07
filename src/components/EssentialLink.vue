@@ -1,14 +1,26 @@
+<script setup lang="ts">
+interface Props {
+  title: string;
+  caption: string;
+  link: string;
+  icon: string;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  caption: '',
+  link: '#',
+  icon: '',
+});
+
+props.title;
+props.caption;
+props.link;
+props.icon;
+</script>
+
 <template>
-  <q-item
-    clickable
-    tag="a"
-    target="_blank"
-    :href="link"
-  >
-    <q-item-section
-      v-if="icon"
-      avatar
-    >
+  <q-item clickable tag="a" target="_blank" :href="link">
+    <q-item-section v-if="icon" avatar>
       <q-icon :name="icon" />
     </q-item-section>
 
@@ -18,32 +30,3 @@
     </q-item-section>
   </q-item>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: 'EssentialLink',
-  props: {
-    title: {
-      type: String,
-      required: true
-    },
-
-    caption: {
-      type: String,
-      default: ''
-    },
-
-    link: {
-      type: String,
-      default: '#'
-    },
-
-    icon: {
-      type: String,
-      default: ''
-    }
-  }
-});
-</script>
