@@ -108,7 +108,7 @@ const linksList = [
   },
   {
     title: 'About',
-    caption: 'github.com/quasarframework',
+    caption: 'About the Project',
     icon: 'ion-information-circle-outline',
     link: '/about',
   },

@@ -50,6 +50,21 @@
         >
       </transition>
     </div>
+    <div class="col">
+      <transition
+        appear
+        enter-active-class="animated bounceIn slower"
+        leave-active-class="animated bounceOut"
+      >
+        <q-btn
+          to="/contact"
+          no-caps
+          size="2rem"
+          class="text-italic cairo bg-brown-4"
+          >Contact</q-btn
+        >
+      </transition>
+    </div>
   </q-page>
 </template>
 
