@@ -1,35 +1,44 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header elevated class="bg-brown-4">
       <q-toolbar>
+        <q-btn flat dense round aria-label="Menu" @click="toggleLeftDrawer">
+          <q-icon size="60px" name="img:/images/SunflowerEduAI.svg"></q-icon>
+        </q-btn>
+
+        <q-toolbar-title class="cairo"> SunfowerEduAI </q-toolbar-title>
+        <q-space class="gt-md" />
+        <q-space class="gt-md" />
+        <q-space class="gt-md" />
+        <q-space class="gt-sm" />
+        <q-space class="lt-sm" />
+        <q-toolbar-title class="cairo gt-xs"
+          >Brought to you by:</q-toolbar-title
+        >
         <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+          class="bg-orange-2"
+          href="https://www.tsinghua.edu.cn/en/index.htm"
+        >
+          <q-icon name="img:/images/tsinghua-university.jpg"></q-icon>
+        </q-btn>
+        <q-btn class="bg-orange-2" href="https://sociallyradicalwebdesign.com">
+          <q-icon name="img:/images/SRWBLogo.png"></q-icon>
+        </q-btn>
+        <q-btn class="bg-orange-2" href="https://www.tsinghua.edu.cn/gss/">
+          <q-icon name="img:/images/logo1.png"></q-icon>
+        </q-btn>
+        <q-btn
+          class="bg-orange-2"
+          href="https://www.undp.org/sustainable-development-goals"
+        >
+          <q-icon name="img:/images/SDG-goals-logo.jpg"></q-icon>
+        </q-btn>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
+    <q-drawer v-model="leftDrawerOpen" show-if-above behavior="mobile" bordered>
       <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
+        <q-item-label header> Home Menu </q-item-label>
 
         <EssentialLink
           v-for="link in essentialLinks"
@@ -39,9 +48,38 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="bg-orange-2">
       <router-view />
     </q-page-container>
+    <q-footer>
+      <q-toolbar class="bg-brown-4">
+        <q-btn flat dense round target="_blank" aria-label="Facebook">
+          <q-icon name="facebook" color="orange-2"></q-icon>
+        </q-btn>
+        <q-btn flat dense round target="_blank" aria-label="Instagram">
+          <q-icon name="ion-logo-instagram" color="orange-2"></q-icon>
+        </q-btn>
+        <q-btn flat dense round target="_blank" aria-label="Twitter">
+          <q-icon name="ion-logo-twitter" color="orange-2"></q-icon>
+        </q-btn>
+        <q-btn flat dense round target="_blank" aria-label="Rumble">
+          <q-icon name="ion-logo-youtube" color="orange-2"></q-icon>
+        </q-btn>
+        <q-space />
+        <q-btn
+          no-caps
+          flat
+          dense
+          class="cairo"
+          href="https://en.wikipedia.org/wiki/Fair_dealing_in_Canadian_copyright_law"
+          target="_blank"
+          aria-label="Fair Use Copyright 2021 Socially Radical Guitarist"
+        >
+          <q-icon name="copyright" color="orange-2"></q-icon>
+          2022 - SunflowerEduAI
+        </q-btn>
+      </q-toolbar>
+    </q-footer>
   </q-layout>
 </template>
 
@@ -51,66 +89,42 @@ import EssentialLink from 'components/EssentialLink.vue';
 
 const linksList = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+    title: 'Home',
+    caption: 'Sunflower Page',
+    icon: 'ion-home',
+    link: '/',
   },
   {
-    title: 'Github',
+    title: 'About',
     caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
+    icon: 'ion-information-circle-outline',
+    link: '/about',
   },
   {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
+    title: 'Contact',
+    caption: 'Contact Page',
+    icon: 'ion-mail',
+    link: '/contact',
   },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
 ];
 
 export default defineComponent({
   name: 'MainLayout',
 
   components: {
-    EssentialLink
+    EssentialLink,
   },
 
-  setup () {
-    const leftDrawerOpen = ref(false)
+  setup() {
+    const leftDrawerOpen = ref(false);
 
     return {
       essentialLinks: linksList,
       leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
-    }
-  }
+      toggleLeftDrawer() {
+        leftDrawerOpen.value = !leftDrawerOpen.value;
+      },
+    };
+  },
 });
 </script>
