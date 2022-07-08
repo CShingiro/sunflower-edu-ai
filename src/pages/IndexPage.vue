@@ -3,12 +3,24 @@
 <template>
   <q-page class="row items-center justify-evenly q-pa-md q-gutter-md">
     <div class="col">
-      <h2 class="text-center cairo text-italic text-bold text-green-10">
-        SunflowerEdu AI
-      </h2>
-      <h3 class="text-center cairo text-italic text-bold text-green-7">
-        A Sunflower for the CountrySide
-      </h3>
+      <transition-group
+        appear
+        enter-active-class="animated fadeInLeft slower"
+        leave-active-class="animated fadeOutLeft"
+      >
+        <h2
+          key="project-title"
+          class="text-center cairo text-italic text-bold text-green-10"
+        >
+          SunflowerEdu AI
+        </h2>
+        <h3
+          key="slogan"
+          class="text-center cairo text-italic text-bold text-green-7"
+        >
+          A Sunflower for the CountrySide
+        </h3>
+      </transition-group>
     </div>
     <div class="col">
       <transition
