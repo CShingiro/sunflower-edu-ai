@@ -11,18 +11,39 @@
       </h3>
     </div>
     <div class="col">
-      <transition>
-        <q-img fit="fill" src="/images/SunflowerEduAI.svg"></q-img>
+      <transition
+        appear
+        enter-active-class="animated bounceInDown slower"
+        leave-active-class="animated bounceOutUp"
+      >
+        <q-img
+          class="draw-in"
+          fit="fill"
+          src="/images/SunflowerEduAI.svg"
+        ></q-img>
       </transition>
     </div>
     <div class="col">
-      <q-btn
-        to="/about"
-        no-caps
-        size="2rem"
-        class="text-italic cairo bg-brown-4"
-        >About</q-btn
+      <transition
+        appear
+        enter-active-class="animated bounceIn slower"
+        leave-active-class="animated bounceOut"
       >
+        <q-btn
+          to="/about"
+          no-caps
+          size="2rem"
+          class="text-italic cairo bg-brown-4"
+          >About</q-btn
+        >
+      </transition>
     </div>
   </q-page>
 </template>
+
+<style scoped>
+.draw-in {
+  stroke-width: 10px;
+  stroke: green;
+}
+</style>
