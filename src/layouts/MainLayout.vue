@@ -16,18 +16,28 @@
           >Brought to you by:</q-toolbar-title
         >
         <q-btn
+          target="_blank"
           class="bg-orange-2"
           href="https://www.tsinghua.edu.cn/en/index.htm"
         >
           <q-icon name="img:/images/tsinghua-university.jpg"></q-icon>
         </q-btn>
-        <q-btn class="bg-orange-2" href="https://sociallyradicalwebdesign.com">
+        <q-btn
+          target="_blank"
+          class="bg-orange-2"
+          href="https://sociallyradicalwebdesign.com"
+        >
           <q-icon name="img:/images/SRWBLogo.png"></q-icon>
         </q-btn>
-        <q-btn class="bg-orange-2" href="https://www.tsinghua.edu.cn/gss/">
+        <q-btn
+          target="_blank"
+          class="bg-orange-2"
+          href="https://www.tsinghua.edu.cn/gss/"
+        >
           <q-icon name="img:/images/logo1.png"></q-icon>
         </q-btn>
         <q-btn
+          target="_blank"
           class="bg-orange-2"
           href="https://www.undp.org/sustainable-development-goals"
         >
