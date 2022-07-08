@@ -6,13 +6,15 @@
           <q-icon size="60px" name="img:/images/SunflowerEduAI.svg"></q-icon>
         </q-btn>
 
-        <q-toolbar-title class="cairo"> SunfowerEduAI </q-toolbar-title>
+        <q-toolbar-title class="cairo text-bold text-italic">
+          SunfowerEdu AI
+        </q-toolbar-title>
         <q-space class="gt-md" />
         <q-space class="gt-md" />
         <q-space class="gt-md" />
         <q-space class="gt-sm" />
         <q-space class="lt-sm" />
-        <q-toolbar-title class="cairo gt-xs"
+        <q-toolbar-title class="cairo text-bold text-italic gt-xs"
           >Brought to you by:</q-toolbar-title
         >
         <q-btn
@@ -51,7 +53,7 @@
         <q-item-label header> Home Menu </q-item-label>
 
         <EssentialLink
-          v-for="link in essentialLinks"
+          v-for="link in linksList"
           :key="link.title"
           v-bind="link"
         />
@@ -86,15 +88,15 @@
           aria-label="Fair Use Copyright 2021 Socially Radical Guitarist"
         >
           <q-icon name="copyright" color="orange-2"></q-icon>
-          2022 - SunflowerEduAI
+          2022 - Fair Use - SunflowerEduAI
         </q-btn>
       </q-toolbar>
     </q-footer>
   </q-layout>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue';
+<script setup lang="ts">
+import { ref } from 'vue';
 import EssentialLink from 'components/EssentialLink.vue';
 
 const linksList = [
@@ -118,23 +120,9 @@ const linksList = [
   },
 ];
 
-export default defineComponent({
-  name: 'MainLayout',
+const leftDrawerOpen = ref(false);
 
-  components: {
-    EssentialLink,
-  },
-
-  setup() {
-    const leftDrawerOpen = ref(false);
-
-    return {
-      essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer() {
-        leftDrawerOpen.value = !leftDrawerOpen.value;
-      },
-    };
-  },
-});
+const toggleLeftDrawer = () => {
+  leftDrawerOpen.value = !leftDrawerOpen.value;
+};
 </script>

@@ -3,7 +3,10 @@
 <template>
   <q-page class="row items-center justify-evenly q-pa-md q-gutter-md">
     <div class="col">
-      <h3 class="text-center cairo text-italic">
+      <h2 class="text-center cairo text-italic text-bold text-green-10">
+        SunflowerEdu AI
+      </h2>
+      <h3 class="text-center cairo text-italic text-bold text-green-7">
         A Sunflower for the CountrySide
       </h3>
     </div>
@@ -19,15 +22,6 @@
         size="2rem"
         class="text-italic cairo bg-brown-4"
         >About</q-btn
-      >
-    </div>
-    <div class="col">
-      <q-btn
-        to="/contact"
-        no-caps
-        size="2rem"
-        class="text-italic cairo bg-brown-4"
-        >Contact</q-btn
       >
     </div>
   </q-page>
