@@ -61,7 +61,8 @@ module.exports = configure(function (/* ctx */) {
 
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
 
-      publicPath: process.env.NODE_ENV === 'production' ? '/REPO_NAME/' : '/',
+      publicPath:
+        process.env.NODE_ENV === 'production' ? '/sunflower-edu-ai/' : '/',
       // analyze: true,
       // env: {},
       // rawDefine: {}
