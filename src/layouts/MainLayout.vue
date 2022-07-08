@@ -6,7 +6,7 @@
           <q-icon size="60px" name="img:/images/SunflowerEduAI.svg"></q-icon>
         </q-btn>
 
-        <q-toolbar-title class="cairo text-bold text-italic">
+        <q-toolbar-title class="cairo text-bold text-italic gt-xs">
           SunfowerEdu AI
         </q-toolbar-title>
         <q-space class="gt-md" />
