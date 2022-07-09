@@ -7,7 +7,7 @@
         </q-btn>
 
         <q-toolbar-title class="cairo text-bold text-italic gt-xs">
-          SunfowerEdu AI
+          SunflowerEdu AI
         </q-toolbar-title>
         <q-space class="gt-md" />
         <q-space class="gt-md" />
